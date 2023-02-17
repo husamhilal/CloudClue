@@ -1,4 +1,4 @@
-baseURL = 'http://cloudclue.blog/'
+baseURL = 'https://cloudclue.blog/'
 languageCode = 'en-us'
 title = 'CloudClue.blog'
 theme = 'DoIt'
@@ -149,7 +149,7 @@ theme = 'DoIt'
 [author]
   name = "Husam Hilal"
   email = "husamhilal@hotmail.com"
-  link = ""
+  link = "https://www.husamhilal.com"
   avatar = ""
   gravatarEmail = ""
 
