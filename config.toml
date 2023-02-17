@@ -17,7 +17,7 @@ theme = 'DoIt'
   keywords = ["Theme", "Hugo"]
 
   # DoIt CHANGED | 0.2.11 site default theme ("light", "dark", "black", "auto")
-  defaultTheme = "dark"
+  defaultTheme = "light"
 
 
 
