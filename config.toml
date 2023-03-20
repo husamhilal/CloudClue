@@ -8,10 +8,10 @@ theme = 'DoIt'
   version = "0.3.X"
 
   # website title
-  title = "My New Hugo Site"
+  title = "CloudClue a blog by Husam Hilal"
 
   # site description
-  description = "This is My New Hugo Site"
+  description = "CloudClue.blog is a blog covering Cloud Infrastructure and Security Topics. It is brough to you by Husam Hilal"
 
   # site keywords
   keywords = ["Theme", "Hugo"]
@@ -98,7 +98,7 @@ theme = 'DoIt'
       # you can add extra information before the name (HTML format is supported), such as icons
       pre = "🌩️"
       # you can add extra information after the name (HTML format is supported), such as icons
-      post = ""
+      post = "🤔"
       # DoIt NEW | 0.2.5 whether to use typeit animation for title name
       typeit = true
 
