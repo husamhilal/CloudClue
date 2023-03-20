@@ -19,13 +19,67 @@ theme = 'DoIt'
   # DoIt CHANGED | 0.2.11 site default theme ("light", "dark", "black", "auto")
   defaultTheme = "light"
 
+# - Menu ---------------------------------------------------------------------------------
+[menu]
+  [[menu.main]]
+    identifier = "posts"
+    # you can add extra information before the name (HTML format is supported), such as icons
+    pre = ""
+    # you can add extra information after the name (HTML format is supported), such as icons
+    post = ""
+    name = "Posts"
+    url = "/posts/"
+    # title will be shown when you hover on this menu link
+    title = ""
+    weight = 1
+[[menu.main]]
+    identifier = "series"
+    # you can add extra information before the name (HTML format is supported), such as icons
+    pre = ""
+    # you can add extra information after the name (HTML format is supported), such as icons
+    post = ""
+    name = "Series"
+    url = "/series/"
+    # title will be shown when you hover on this menu link
+    title = ""
+    weight = 2
+[[menu.main]]
+    identifier = "about"
+    # you can add extra information before the name (HTML format is supported), such as icons
+    pre = ""
+    # you can add extra information after the name (HTML format is supported), such as icons
+    post = ""
+    name = "About"
+    url = "/about/"
+    # title will be shown when you hover on this menu link
+    title = ""
+    weight = 3
+#  [[menu.main]]
+#    identifier = "tags"
+#    pre = ""
+#    post = ""
+#    name = "Tags"
+#    url = "/tags/"
+#    title = ""
+#    weight = 2
+#  [[menu.main]]
+#    identifier = "categories"
+#    pre = ""
+#    post = ""
+#    name = "Categories"
+#    url = "/categories/"
+#    title = ""
+#    weight = 3
 
+#-------------------------------------------------------#
 
-
-
-
-
-
+# Markup related configuration in Hugo
+[markup]
+  # Syntax Highlighting (https://gohugo.io/content-management/syntax-highlighting)
+  [markup.highlight]
+    # false is a necessary configuration (https://github.com/dillonzq/LoveIt/issues/158)
+    noClasses = false
+    
   # Header config
   [params.header]
     # desktop header mode ("fixed", "normal", "auto")
@@ -42,7 +96,7 @@ theme = 'DoIt'
       # title name
       name = "CloudClue.blog"
       # you can add extra information before the name (HTML format is supported), such as icons
-      pre = ""
+      pre = "🌩️"
       # you can add extra information after the name (HTML format is supported), such as icons
       post = ""
       # DoIt NEW | 0.2.5 whether to use typeit animation for title name
@@ -52,7 +106,7 @@ theme = 'DoIt'
   [params.footer]
     enable = true
     # DoIt NEW | 0.2.0 Custom content (HTML format is supported)
-    custom = 'Husam Hilal'
+    # custom = 'Husam Hilal'
     # DoIt NEW | 0.2.0 whether to show Hugo and theme info
     hugo = false
     # DoIt NEW | 0.2.14 Hosted on (HTML format is supported)
