@@ -190,7 +190,7 @@ theme = 'DoIt'
 
   # DoIt NEW | 0.2.0 Analytics config
   [params.analytics]
-    enable = false
+    enable = true
     # Google Analytics
     [params.analytics.google]
       id = "G-1TGCWDDSG6"
