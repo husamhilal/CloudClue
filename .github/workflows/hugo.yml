@@ -31,6 +31,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       HUGO_VERSION: 0.122.0
+      NodeVersion: 20
     steps:
       - name: Install Hugo CLI
         run: |
