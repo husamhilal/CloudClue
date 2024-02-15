@@ -246,7 +246,7 @@ theme = 'DoIt'
   page = ["HTML", "MarkDown"]
   section = ["HTML", "RSS"]
   taxonomy = ["HTML", "RSS"]
-  taxonomyTerm = ["HTML"]
+#  taxonomyTerm = ["HTML"]
 
 # Options for taxonomies
 [taxonomies]
