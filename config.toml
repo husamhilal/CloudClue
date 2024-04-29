@@ -11,10 +11,10 @@ theme = 'DoIt'
   title = "CloudClue a blog by Husam Hilal"
 
   # site description
-  description = "CloudClue.blog is a blog covering Cloud Infrastructure and Security Topics. It is brough to you by Husam Hilal"
+  description = "CloudClue is a blog covering Cloud Infrastructure and Security Topics. It is brough to you by Husam Hilal"
 
   # site keywords
-  keywords = ["Theme", "Hugo"]
+  keywords = ["Microsoft", "Azure","Security","Azure VMware Solution", "VMware", "AVS","Defender for Cloud","MSFTAdvocate", "MSFT","Cloud","Hyperscaler",]
 
   # DoIt CHANGED | 0.2.11 site default theme ("light", "dark", "black", "auto")
   defaultTheme = "light"
