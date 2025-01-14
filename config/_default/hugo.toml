@@ -1,3 +1,9 @@
+[module]
+  [[module.imports]]
+    path = "github.com/martignoni/hugo-notice"
+  [[module.imports]]
+    path = 'github.com/tomowang/hugo-theme-tailwind'
+
 baseURL = "https://cloudclue.blog/"
 title = "CloudClue Blog"
 author = "Husam Hilal"
@@ -38,8 +44,3 @@ series = "series"
     disabled = false
     privacyEnhanced = true
 
-[module]
-  [[module.imports]]
-    path = "github.com/martignoni/hugo-notice"
-  [[module.imports]]
-    path = 'github.com/tomowang/hugo-theme-tailwind'
