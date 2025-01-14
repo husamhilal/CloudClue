@@ -19,7 +19,7 @@ sorry = "Sorry, we couldn't find the page you're looking for."
 page_not_found = "Page not found"
 
 [footer]
-powered_by = "Powered by {{ .Generator }} {{ .Heart }} {{ .Theme }}"
+powered_by = "Cloud Clue by Husam Hilal {{ .Heart }}"
 copyright_with_since ="{{ .CopyrightSign }} {{ .SinceYear }} - {{ .CurrentYear}} {{ .Copyright }}"
 copyright_wo_since ="{{ .CopyrightSign }} {{ .CurrentYear}} {{ .Copyright }}"
 
