@@ -4,20 +4,6 @@
   [[module.imports]]
     path = 'github.com/tomowang/hugo-theme-tailwind'
 
-baseURL = "https://cloudclue.blog/"
-title = "CloudClue Blog"
-author = "Husam Hilal"
-copyright = "Husam Hilal"
-pagination.pagerSize = 4 # for demonstration of pagination
-languageCode = 'en-us'
-defaultContentLanguage = "en"
-enableInlineShortcodes = true
-# prevent build failures when using Hugo's Instagram shortcode due to deprecated Instagram API.
-# See https://github.com/gohugoio/hugo/issues/7228#issuecomment-714490456
-ignoreErrors = ["error-remote-getjson"]
-theme = "hugo-theme-tailwind"
-enableGitInfo = true
-
 [markup]
   _merge = "deep"
 
@@ -27,15 +13,6 @@ tag = "tags"
 series = "series"
 
 [privacy]
-  [privacy.vimeo]
-    disabled = false
-    simple = true
-
-  [privacy.twitter]
-    disabled = false
-    enableDNT = true
-    simple = true
-
   [privacy.instagram]
     disabled = false
     simple = true
@@ -44,3 +21,19 @@ series = "series"
     disabled = false
     privacyEnhanced = true
 
+[pagination]
+  pagerSize = 3
+
+baseURL = "https://cloudclue.blog/"
+title = "CloudClue.blog"
+description = "CloudClue is a blog covering Cloud Infrastructure, AI and Security topics. It is brought to you by Husam Hilal"
+author = "Husam Hilal"
+copyright = "Husam Hilal"
+languageCode = 'en-us'
+defaultContentLanguage = "en"
+enableInlineShortcodes = true
+# prevent build failures when using Hugo's Instagram shortcode due to deprecated Instagram API.
+# See https://github.com/gohugoio/hugo/issues/7228#issuecomment-714490456
+ignoreErrors = ["error-remote-getjson"]
+theme = "hugo-theme-tailwind"
+enableGitInfo = true
