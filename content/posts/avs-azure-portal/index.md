@@ -18,3 +18,6 @@ hello
 test 
 test
 
+{{< notice warning >}}
+This is a warning notice. Be warned!
+{{< /notice >}}
