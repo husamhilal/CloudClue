@@ -1,0 +1,35 @@
+[en]
+  languageCode = 'en-US'
+  languageDirection = 'ltr'
+  languageName = 'English'
+  weight = 1
+  [en.menu]
+  [[en.menu.main]]
+    identifier = "post"
+    name = "Posts"
+    pageRef = "posts"
+    weight = 10
+
+  [[en.menu.main]]
+    identifier = "about"
+    name = "About"
+    pageRef = "about"
+    weight = 20
+
+[es]
+  languageCode = 'es'
+  languageDirection = 'ltr'
+  languageName = 'Spanish'
+  weight = 2
+  [es.menu]
+  [[es.menu.main]]
+    identifier = "post"
+    name = "Puestos"
+    pageRef = "posts"
+    weight = 10
+
+  [[es.menu.main]]
+    identifier = "about"
+    name = "Sabre"
+    pageRef = "about"
+    weight = 20

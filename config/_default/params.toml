@@ -1,0 +1,72 @@
+# SEO keywords and description for your site.
+keywords = "Husam Hilal, Microsoft, Azure, Azure VMware Solution, Azure AI, AI"
+subtitle = "CloudClue a blog by Husam Hilal"
+
+# dir name of your blog content (default is `content/posts`).
+# the list of set content will show up on your index page (baseurl).
+contentTypeName = "posts"
+
+jsonLD = true
+
+showAuthor = true
+
+[author]
+  name = "Husam Hilal"
+  email = "info@husamhilal.com"
+
+[search]
+  summaryInclude = 180 # show only part of content in search result.
+  minMatchCharLength = 2 # https://www.fusejs.io/api/options.html#minmatchcharlength
+  threshold = 0.3 # https://www.fusejs.io/api/options.html#threshold
+
+[header]
+  logo = "logo.png"
+
+[footer]
+  since = 2025
+  poweredby = true
+
+# giscus is comments system powered by GitHub Discussions
+# generate configurations from https://giscus.app/
+[giscus]
+  enabled = false
+  repo = "tomowang/hugo-theme-tailwind"
+  repoID = "R_kgDOKjVJHA"
+  category = "Announcements"
+  categoryID = "DIC_kwDOKjVJHM4CafqS"
+  mapping = "pathname"
+  strict = "0"
+  reactionsEnabled = "1"
+  emitMetadata = "0"
+  inputPosition = "bottom"
+  lang = "en"
+
+[social_media]
+  [[social_media.items]]
+    enabled = true
+    title = 'YouTube'
+    icon = 'brand-youtube'
+    link = 'https://www.youtube.com/husamhilal'
+
+  [[social_media.items]]
+    enabled = true
+    title = 'LinkedIn'
+    icon = 'brand-linkedin'
+    link = 'https://www.linkedin.com/in/husamhilal'
+
+  [[social_media.items]]
+    enabled = true
+    title = 'Github'
+    icon = 'brand-github'
+    link = 'https://github.com/husamhilal'
+
+[pwa]
+  enabled = true
+  icon = "logo.png" # should be in assets
+  icon_sizes = [192, 512]
+
+  # will be used as the manifest.json file and merge the default one
+  # https://developer.mozilla.org/en-US/docs/Web/Manifest
+  # https://web.dev/add-manifest/
+  [manifest]
+  description = "CloudClue blog"
