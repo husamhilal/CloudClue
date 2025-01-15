@@ -9,7 +9,8 @@ toc = false
 tags = [
     "AVS",
     "VMware",
-    "Azure"
+    "Azure",
+    "Azure Champ"
 ]
 series = ["Azure VMware Solution"]
 categories = ["Microsoft Azure"]
