@@ -2,6 +2,9 @@
 [googleAnalytics]
   ID = "G-1TGCWDDSG6"
 
+[microsoft_clarity]
+  id = 'pudemechet'
+
 [instagram]
   disableInlineCSS = true
 

@@ -1,3 +1,5 @@
+github.com/hugomods/microsoft-clarity v0.3.0 h1:le5nM+2SWVtQfHrrLd8IHw4Cos7iMjtkLMTNFd38Ijw=
+github.com/hugomods/microsoft-clarity v0.3.0/go.mod h1:CsSVKpJIt6BxS7yhqZeyXTwnYLTaseg37kbRpOY09Qs=
 github.com/martignoni/hugo-notice v0.0.0-20240707105359-40327ac00cc4 h1:lxS0B1ta9/uW+orrnvsGHMCC0TgN4DymEgdlb0PL/uU=
 github.com/martignoni/hugo-notice v0.0.0-20240707105359-40327ac00cc4/go.mod h1:MIQPOMgEcbyRC0gNLzQFSgrS+wIy3RuQ/HbaZYtTOKU=
 github.com/tomowang/hugo-theme-tailwind v0.0.0-20241217154136-b877d92a84eb h1:ZGwAjaLiaNAc566nEevvig0yRZFJEyZxQvCkf5q4Py8=

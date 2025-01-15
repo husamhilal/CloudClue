@@ -16,4 +16,6 @@ hugo mod get github.com/module-provider/modulename
 https://themes.gohugo.io/themes/hugo-theme-tailwind/
 https://github.com/tomowang/hugo-theme-tailwind
 https://github.com/martignoni/hugo-notice
+https://hugomods.com/analytics/microsoft-clarity/
 https://tailwindcss.com/docs
+
