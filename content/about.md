@@ -1,27 +1,14 @@
 +++
 title = "About"
-description = "Hugo, the world's fastest framework for building websites"
-date = "2019-02-28"
+description = "A quick brief about the main contributor to CloudClue.blog"
+date = "2025-01-15"
 aliases = ["about-us", "about-me", "about", "contact"]
 author = "Husam Hilal"
+toc = false
 +++
 
-Hello!
+Husam Hilal is a Partner Solution Architect at Microsoft, where he is part of the Global Partner Solution (GPS) organization. With over 6 years at Microsoft and 15 years in the IT industry, Husam has accumulated a wealth of experience in various roles. His expertise is particularly strong in Azure Infrastructure innovation, especially around Azure VMware Solution (AVS).
 
-Written in Go, Hugo is an open source static site generator available under the [Apache Licence 2.0.](https://github.com/gohugoio/hugo/blob/master/LICENSE) Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content files and uses shortcodes to add rich content. Other notable features are taxonomies, multilingual mode, image processing, custom output formats, HTML/CSS/JS minification and support for Sass SCSS workflows.
+In his current role, Husam focuses on empowering partners by designing and implementing Microsoft Azure solutions that drive customer success. He is deeply committed to solving business challenges with technical solutions, aiming for exceptional outcomes for both customers and partners.
 
-Hugo makes use of a variety of open source projects including:
-
-* https://github.com/yuin/goldmark
-* https://github.com/alecthomas/chroma
-* https://github.com/muesli/smartcrop
-* https://github.com/spf13/cobra
-* https://github.com/spf13/viper
-
-Hugo is ideal for blogs, corporate websites, creative portfolios, online magazines, single page applications or even a website with thousands of pages.
-
-Hugo is for people who want to hand code their own website without worrying about setting up complicated runtimes, dependencies and databases.
-
-Websites built with Hugo are extremely fast, secure and can be deployed anywhere including, AWS, GitHub Pages, Heroku, Netlify and any other hosting provider.
-
-Learn more and contribute on [GitHub](https://github.com/gohugoio).
+Husam is an active contributor to several technical communities. He leads initiatives such as the [AVS Pros](https://aka.ms/AVSPros) community on LinkedIn and leads contribute to [AVS Labs](https://aka.ms/AVSLabs), a set of scripts to build AVS labs. He is also involved in contributing to AVS Hub, offering valuable resources to the community. You can connect with him on [LinkedIn](https://www.linkedin.com/in/husamhilal) or check out his content on [YouTube](https://youtube.com/husamhilal)
