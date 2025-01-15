@@ -1,9 +1,10 @@
 +++
 author = "Husam Hilal"
 title = "Azure VMware Solution for VMware Experts"
-date = "2025-01-13"
-description = "Explore Azure VMware Solution experiance in Azure explorer as a VMware Expert"
-# image = "images/hugo-logo-wide.svg"
+date = "2025-01-15"
+description = "Explore Azure VMware Solution experience in Azure as a VMware Expert"
+image = "images/avs-for-vmware-expert.png"
+aliases = ["avs-vmware-experience"]
 toc = false
 tags = [
     "AVS",
