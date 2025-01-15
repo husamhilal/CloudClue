@@ -1,6 +1,6 @@
 # SEO keywords and description for your site.
 keywords = "Husam Hilal, Microsoft, Azure, Azure VMware Solution, VMware, AVS, Azure AI, AI, Security, Defender for Cloud, MSFTAdvocate, MSFT, Cloud, Hyperscaler"
-subtitle = "CloudClue a blog by Husam Hilal"
+subtitle = "by Husam Hilal"
 
 # dir name of your blog content (default is `content/posts`).
 # the list of set content will show up on your index page (baseurl).
