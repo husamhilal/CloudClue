@@ -26,5 +26,3 @@ This is a info notice. Be informed!
 {{< /notice >}}
 
 <br>
-
-# {{< youtube ms32oqonz04 >}}
