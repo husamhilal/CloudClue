@@ -6,4 +6,4 @@ aliases = ["about-us", "about-hugo", "contact"]
 author = "Husam Hilal"
 +++
 
-multilingual中文测试页面
+Hola!
