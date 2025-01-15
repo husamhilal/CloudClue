@@ -25,9 +25,8 @@ series = "series"
   pagerSize = 3
 
 baseURL = "https://cloudclue.blog/"
-title = "CloudClue.blog"
 description = "CloudClue is a blog covering Cloud Infrastructure, AI and Security topics. It is brought to you by Husam Hilal"
-author = "Husam Hilal"
+#author = "Husam Hilal"
 copyright = "Husam Hilal"
 languageCode = 'en-us'
 defaultContentLanguage = "en"
