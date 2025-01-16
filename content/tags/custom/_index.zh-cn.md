@@ -1,4 +1,4 @@
 ---
-title: 随便一个标签
+title: CustomTag
 slug: custom
 ---
