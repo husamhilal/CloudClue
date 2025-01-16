@@ -2,21 +2,23 @@
 
 ## Operation Commands
 
-* install Hugo on Windows: winget install Hugo.Hugo.Extended --force --scope machine
+* install Hugo on Windows: 
+  
+  winget install Hugo.Hugo.Extended --force --scope machine
 
 * run hugo server in production:
+  
+  hugo server -D --disableFastRender --environment production
 
-hugo server -D --disableFastRender --environment production
-
-hugo server --renderToMemory
+  hugo server --renderToMemory
 
 * updating modules:
 
-hugo mod get -u
+  hugo mod get -u
 
 * adding a module:
 
-hugo mod get github.com/module-provider/modulename
+  hugo mod get github.com/module-provider/modulename
 
 ## Credit
 
