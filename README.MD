@@ -32,3 +32,7 @@ https://hugomods.com/analytics/microsoft-clarity/
 
 https://tailwindcss.com/docs
 
+## Future enhancements
+
+* Add button to go to top of the page once user scroll down (reference: https://github.com/adityatelange/hugo-PaperMod)
+* Make the table of content (toc) collapsible (reference: https://github.com/adityatelange/hugo-PaperMod)
