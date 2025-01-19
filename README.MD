@@ -2,7 +2,7 @@
 
 ## Operation Commands
 
-* install Hugo on Windows: 
+* install Hugo on Windows:
   
   winget install Hugo.Hugo.Extended --force --scope machine
 
