@@ -1,3 +1,6 @@
 # GA Tracking ID
 [googleAnalytics]
   ID = "G-1TGCWDDSG6"
+
+[microsoft_clarity]
+  id = 'pudemechet'

@@ -30,13 +30,13 @@ showAuthor = true
 # giscus is comments system powered by GitHub Discussions
 # generate configurations from https://giscus.app/
 [giscus]
-  enabled = false
-  repo = "tomowang/hugo-theme-tailwind"
-  repoID = "R_kgDOKjVJHA"
+  enabled = true # false
+  repo = "Husamhilal/cloudclue"
+  repoID = "R_kgDOI-7BBQ"
   category = "Announcements"
-  categoryID = "DIC_kwDOKjVJHM4CafqS"
+  categoryID = "DIC_kwDOI-7BBc4CmMci"
   mapping = "pathname"
-  strict = "0"
+  strict = "1"
   reactionsEnabled = "1"
   emitMetadata = "0"
   inputPosition = "bottom"
