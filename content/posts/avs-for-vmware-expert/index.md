@@ -1,7 +1,7 @@
 +++
 author = "Husam Hilal"
 title = "Azure VMware Solution for VMware Experts"
-date = "2025-01-15"
+date = "2025-05-15"
 description = "Explore Azure VMware Solution experience in Azure as a VMware Expert"
 image = "images/avs-for-vmware-expert.png"
 aliases = ["avs-vmware-experience"]
@@ -10,7 +10,8 @@ tags = [
     "AVS",
     "VMware",
     "Azure",
-    "VMware Champ"
+    "VMware Champ",
+    "Level 200"
 ]
 series = ["Azure VMware Solution"]
 categories = ["Microsoft Azure"]

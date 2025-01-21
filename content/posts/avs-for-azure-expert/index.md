@@ -1,7 +1,7 @@
 +++
 author = "Husam Hilal"
 title = "Azure VMware Solution for Azure Experts"
-date = "2025-01-14"
+date = "2025-01-21"
 description = "Explore Azure VMware Solution experience in Azure as an Azure Subject Matter Expert"
 image = "images/avs-for-azure-expert.png"
 aliases = ["avs-azure-experience"]
@@ -10,7 +10,8 @@ tags = [
     "AVS",
     "VMware",
     "Azure",
-    "Azure Champ"
+    "Azure Champ",
+    "Level 200"
 ]
 series = ["Azure VMware Solution"]
 categories = ["Microsoft Azure"]
