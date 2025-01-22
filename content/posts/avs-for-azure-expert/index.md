@@ -4,17 +4,13 @@ title = "Azure VMware Solution for Azure Experts"
 date = "2025-01-21"
 description = "Explore Azure VMware Solution experience in Azure as an Azure Subject Matter Expert"
 image = "images/avs-for-azure-expert.png"
-aliases = ["avs-azure-experience"]
+aliases = [ "avs-azure-experience" ]
+tags = [ "AVS", "VMware", "Azure", "Azure Champ", "Level 200" ]
+keywords = [ "Azure VMware Solution", "Private cloud", "VMware", "Azure Portal" ]
+series = [ "Azure VMware Solution" ]
+categories = [ "Microsoft Azure" ]
 toc = true
-tags = [
-    "AVS",
-    "VMware",
-    "Azure",
-    "Azure Champ",
-    "Level 200"
-]
-series = ["Azure VMware Solution"]
-categories = ["Microsoft Azure"]
+draft = false
 +++
 
 # Azure VMware Solution - The Azure Experience
