@@ -112,48 +112,70 @@ This can also be helpful for connecting multiple AVS private cloud instances loc
 
 #### Clusters
 
-This sections enabled you to manage AVS clusters:
+This sections enables you to manage AVS clusters:
 
 - **Add** or **remove** hosts in existing clusters (e.g. add AV64 clusters for capacity expansion.)
 - Deploy new clusters (minimum of three hosts in each).
 - Delete existing clusters if no longer used.
 
-Couple considerations to keep in mind:
+Here are couple considerations to keep in mind:
 
 - Currently, AVS private cloud needs to have the first (aka seed or initial) cluster of AV36 or AV36P, and expand capacity by adding AV64 clusters (recommended). For, AV64 an additional management address block need to be configured under **Extended address block** accessible from the Clusters section.
 - To add additional hosts, make sure you have enough quota. You may need to request additional quota when you expect to add capacity. Hosts will be added to an existing cluster in parallel. The operation takes about 30 minutes.
 
-#### **Encryption**  
+#### Encryption
 
-Configure **Customer Managed Keys (CMK)** stored in Azure Key Vault for vSAN encryption. For compliance, Azure Key Vault HSM can provide FIPS 140-2 Level 2 or 3 protection.
+That is where you can configure AVS private cloud to use a **customer managed key** (CMK) stored in Azure Key Vault for encrypting (wrapping) vSAN Key Encryption Key (KEK). It worth noting that for regulated industries you can use Azure Key Vault HSM protected keys or Azure Managed HSM which can provide FIPS 140-2 Level 2 or 3 protection.
 
-#### **VMware Credentials**  
+#### VMware Credentials
+
 Access **CloudAdmin credentials** for vSphere and NSX Manager. Passwords can be rotated here, and URI certificates verified.
 
-#### **Identity**  
-Enable **system-assigned managed identity** for AVS to integrate with Azure Key Vault for encryption.
+That is were you can access the CloudAdmin credentials for vSphere client (vCenter Server) and NSX Manager. You can also rotate the passwords for those credentials. It worth mentioning that rotation can be automated. For example, you can use Azure Logic App for that
 
-#### **Storage**  
-Attach additional datastores, such as **Azure NetApp Files** or **Azure Elastic SAN**, to extend storage without adding hosts. **Pure Storage** is also an option for datastore integration.
+From this section you can also you can grab the Web Client URI for both of vCenter Server and NSX Manager, and since these URI are TLS (SSL) encrypted, you can check the Certificate thumbprint if needed.
+
+#### Identity
+
+That is where the user can enable **system-assigned managed identity** for the AVS private cloud. The main use case for this today is to grant AVS instance access to an Azure Key Vault when enabling Customer Managed Keys (CMK) for vSAN KEK encryption.
+
+#### Storage
+
+That is where you can attach additional datastores to the AVS private cloud instance. Today, through this section you can attach pre-provisioned **Azure NetApp Files** or **Azure Elastic SAN** volumes.
+
+> The benefit of doing this is to allow expanding the AVS private cloud storage without adding additional hosts just for meeting storage requirements.
+
+It worth noting that **Pure Storage** has an integration with AVS as a datastore as well that can be enabled separately.
 
 #### **Placement Policies**  
-Define VM placement policies, such as:
+
+That is where you can define VM placement policies, i.e. specifying where the VM need to be or not, such as:
+
 - VM-Host Affinity/Anti-affinity
 - VM-VM Affinity/Anti-affinity  
+
 These policies can optimize licensing costs (e.g., SQL Server, Oracle).
 
-#### **Add-ons**  
-Enable key VMware solutions:
-1. **VMware HCX**: Included for seamless workload migration.
-2. **VMware SRM (Live Site Recovery)**: Requires additional licensing for disaster recovery.
-3. **Azure Arc**: Enables CRUD operations on AVS VMs via Azure APIs.
+#### Azure Hybrid Benefit
 
-#### **vCenter Server Inventory**  
-If AVS is Arc-enabled, users can:
-- View and manage VMs.
-- Enable Azure services like **Monitor** and **Defender for Cloud**.
+This is where you can create VM-Host affinity policy to take advantage of an already paid Software Assurance-enabled SQL server license applying it to AVS host/s.
 
-#### **Workload Networks**  
+#### Add-ons
+
+That is were you can start configuring three main solutions for AVS including:
+
+1. **VMware HCX** which is the primary solution used for migrating workloads to AVS. The license for HCX is include in AVS. [Access a **click-through demo** to experiment migrating VMs using VMware HCX to AVS](https://regale.cloud/Microsoft/play/3210/hcx-migration)
+2. **VMware SRM** (which is being re-branded to **VMware Live Site Recovery**) which is an easy to enable disaster recovery solution for AVS. But you will need to purchase license from Broadcom. [Access a **click-through demo** to experiment protecting VMs with VMware SRM and AVS](https://regale.cloud/Microsoft/play/3245/vmware-site-recovery-manager-srm)
+
+3. **Azure Arc** which is an Azure native service, when enabled for AVS it helps managing and operating VMs on vSphere making the experience very similar to native Azure VMs. It enables Create, Read, Update and Delete (CRUD) operations via the Azure APIs (including Azure Portal).
+
+### vCenter Server Inventory  
+
+This is only enabled if the AVS private cloud is **Arc-enabled**. Through this section, you can view existing VM deployed on AVS vSphere, you can also create or delete VMs. You can also **Arc-enable these VMs**, and take all advantages of Arc-enabled Servers including integration with Azure Monitor, Azure Update Manager, Windows Admin Center, Run Command, Defender for Cloud, etc. Also, you can view and **Azure-enable** *Resource Pools/clusters/hosts, Networks, Templates, and Datastores*. 
+
+[Access a **click-through demo** to experiment the capabilities of Arc-enables AVS](https://regale.cloud/microsoft/play/4084/capabilities-of-arc-enabled-avs)
+
+### **Workload Networks**  
 Manage NSX segments and configurations:
 - Configure DHCP and DNS services.
 - Establish **Internet connectivity options**:
@@ -169,7 +191,7 @@ Includes:
 Similar to other Azure resources, AVS offers:
 - **Metrics**: Track CPU, memory, and datastore utilization.
 - **Alerts**: Configure rules based on resource metrics.
-- **Diagnostic Settings**: Export syslogs and metrics to destinations like Azure Log Analytics.
+- **Diagnostic Settings**: Export syslog and metrics to destinations like Azure Log Analytics.
 
 ---
 
