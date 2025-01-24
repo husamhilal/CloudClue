@@ -75,7 +75,7 @@ This section offers troubleshooting tools and common problem resolutions. You ca
 
 ### Locks
 
-Similar to other Azure services, the **Lock** feature can be found under **Settings**. This feature helps prevent users from accidentily deleting or modifying resource properties by making them read-only.
+Similar to other Azure services, the **Lock** feature can be found under **Settings**. This feature helps prevent users from accidentally deleting or modifying resource properties by making them read-only.
 
 - **Delete Lock**: Prevents deletion of AVS private cloud instance regardless of the user roles and RBAC permissions. 
 - **Read-only Lock**: Prevents unintended changes to resource properties to avoid unplanned interruptions.
@@ -193,4 +193,3 @@ Similar to other Azure resources, AVS offers:
 
 ### Final Thoughts  
 AVS combines the familiarity of VMware with the scalability of Azure, offering a seamless private cloud experience. While it integrates tightly with Azure’s ecosystem, its unique requirements, such as quotas, network planning, and specialized management options, make it crucial for administrators to understand the AVS lifecycle. With tools and settings tailored for enterprise needs, AVS empowers businesses to innovate securely and efficiently in the cloud.
-
