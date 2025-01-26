@@ -33,20 +33,20 @@ Well! **The solution to that is through authenticating to the Storage Account us
 
 There are two two types of Azure Managed Identities: an Azure artifact that is backed with autonomous Azure EntraID Service Principal that is employing self-managed credentials:
 
-* System assigned managed identity: It's a mapped identity to the resource (1-1 relationship), where the lifecycle of the identity is tied to the lifecycle of the Azure resource itself, it's an Azure responsibility.
-* User assigned managed identity: It's an independent identity that can be assigned to multiple Azure resources  (1-∞ relationship), making it flexible. However, the lifecycle of the identity is managed separately from the resources, it's a Customer responsibility.
+* **System assigned managed identity**: It's a mapped identity to the resource (1-1 relationship), where the lifecycle of the identity is tied to the lifecycle of the Azure resource itself, it's an Azure responsibility.
+* **User assigned managed identity**: It's an independent identity that can be assigned to multiple Azure resources  (1-∞ relationship), making it flexible. However, the lifecycle of the identity is managed separately from the resources, it's a Customer responsibility.
 
 In this post, I will demonstrate using user assigned managed identity as it has various implementation scenarios. Before you start make sure that you have created a User assigned managed identity and assigned it to a VM in Azure.
 
 You'll notice the following in the example script snipper below:
 
-1. The PowerShell modules needed to run the used cmdlets are the following. Make sure you install them wherever you're running the script:
+1. The following are the PowerShell modules needed to run the used cmdlets. Make sure to install them wherever you are running the script:
 
-    [Az.Accounts](https://learn.microsoft.com/powershell/module/az.accounts) { Connect-AzAccount }
+    * [Az.Accounts](https://learn.microsoft.com/powershell/module/az.accounts): Connect-AzAccount
 
-    [Az.Storage](https://learn.microsoft.com/powershell/module/az.storage) { New-AzStorageContext, New-AzStorageContainer, Set-AzStorageBlobContent }
+    * [Az.Storage](https://learn.microsoft.com/powershell/module/az.storage): New-AzStorageContext, New-AzStorageContainer, Set-AzStorageBlobContent
 
-    [Az.ManagedServiceIdentity](https://learn.microsoft.com/powershell/module/az.managedserviceidentity/) { Get-AzUserAssignedIdentity }
+    * [Az.ManagedServiceIdentity](https://learn.microsoft.com/powershell/module/az.managedserviceidentity/): Get-AzUserAssignedIdentity
 
 2. Using parameter `-Identity` in `Connect-AzAccount` is the secret that allows us to leverage managed identities.  Providing the other parameter `-AccountId` is necessary only when there are more than one Managed Identity linked to the Azure resource, to solve the confusion. Otherwise the first managed identity in the list will be selected by default. In other words, it's not necessary if you are using only one user assigned managed identity or if you are using system assigned managed identity.
 
