@@ -1,7 +1,7 @@
 +++
 author = "Husam Hilal"
 title = "Enable Azure VM Boot Diagnostics leveraging Managed Storage Account using ARMClient Tool"
-date = "2025-01-01"
+date = "2055-01-01"
 description = "Learn how to automatically enable Azure VM Boot Diagnostics with Managed Storage Account using ARMClient Tool"
 image = "images/boot-diag-managed-storage-arm-client.png"
 aliases = ["azure-armclient-example"]
@@ -14,21 +14,30 @@ tags = [
 ]
 series = ["Azure Core"]
 categories = ["Microsoft Azure"]
+draft = true
 +++
 
-Using a Microsoft Managed Storage Account when enabling Azure VM Boot Diagnostics feature is an advantage to the customers, where they eliminate one more Storage Account that they need to manage. That's awesome! Taking in consideration that the amount of data stored is very minimal, two files per VM. But still there is Storage Account to manage, not to mention the amount of those files that are being created and no one cleans them after the VM is deleted!
+## Background
 
-Leveraging a managed Storage Account for Boot Diagnostics data can be easily achieved when creating new VMs in Azure using an ARM template for example, because it can be declared in the template itself (just make sure the API version for the Microsoft.Compute/virtualMachines resource is "2020-06-01"), see below:
+The capability, of using Microsoft managed Storage Account when enabling Azure VM Boot Diagnostics, is an advantage to the customers. Where they eliminate one more Storage Account that they need to manage. That's awesome! Even the amount of data stored is very minimal; two files per VM. But, these files could become a burden especially if there are many VMs, of if the customer is using some ephermal VMs, as those files remain stale when a VM is deleted (they are not cleared automatically).
 
+![azure virtual machine boot diagnostics](images/boot-diag.png)
+
+Leveraging a managed Storage Account for Boot Diagnostics data can be easily achieved when creating new VMs in Azure using an ARM template for example, because it can be declared in the template itself (just make sure the API version for the Microsoft.Compute/virtualMachines resource is "2020-06-01" or above), see below:
+
+```json
                 "diagnosticsProfile": {
                     "bootDiagnostics": {
                         "enabled": true
                     }
                 }
+```
 
-Basically, it is as we used to do it before, but without defining storageUri property. That's actually the trick (beside the API version).
+Basically, it is similar to what used to be, but without defining `storageUri` property. That's actually the trick (beside the API version).
 
-Now, the problem is what if you already have VMs deployed in Azure. How to switch them to use a Managed Storage Account?! The official documentation says it's only possible through the portal. "Boot diagnostics using a manage storage account can currently only be applied through the Azure portal." That is a solution, but it's not scalable! How can we enable it for a group of VMs in one hit?
+## Problem
+
+Now, the problem is what if you already have VMs deployed in Azure. **How to switch them to use the managed Storage Account capability**?! The official documentation says it's only possible through the portal. "Boot diagnostics using a manage storage account can currently only be applied through the Azure portal." That is a solution, but it's not scalable! How can we enable it for a group of VMs in one hit?
 
 Eventually, there will be support to do this through various mechanisms such as PowerShell and Azure CLI. But, what about now? Can we create a scalable solution? Well! What if we think out of the box! Can we replace the whole properties of bootDiagnostics section in ARM and remove storageUri property. The answer, yes we can! And that's what happens when you try to change the setting through the portal. Do you want to see that in action? Sure, click F12 and look at the request that's being sent to ARM REST API when you click the Save button.
 
