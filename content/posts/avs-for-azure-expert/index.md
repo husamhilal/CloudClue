@@ -171,25 +171,42 @@ This is only enabled if the AVS private cloud is **Arc-enabled**. Through this s
 
 [Access a **click-through demo** to experiment the capabilities of Arc-enables AVS](https://regale.cloud/microsoft/play/4084/capabilities-of-arc-enabled-avs)
 
-### **Workload Networks**  
-Manage NSX segments and configurations:
-- Configure DHCP and DNS services.
-- Establish **Internet connectivity options**:
-  - Managed SNAT.
-  - Public IP for advanced NSX configurations.
+### Workload Networks
 
-#### **Operations**  
-Includes:
-1. **Azure Arc verification**.
-2. **Run Commands**: Perform elevated operations (e.g., configure storage policies, restart HCX Manager).
+This is where you can manage some of the NSX configurations:
+
+- **Segments**: These are the NSX segments. Generally speaking, if you are coming from an Azure networking background, these are very similar to Virtual Network subnet. You will be able to create new ones, update or delete existing ones.
+- **DHCP**: You can configure NSX tier-1 gateway DHCP configurations from here. DHCP is an NSX managed feature. You can create DHCP servers or relays. You will need these DHCP configurations when you create a segment, so you can assign IPs automatically to VMs in that segment.
+- **DNS**: Similar to DHCP, its a managed feature in NSX. You will be able to create or configure DNS zones, and eventually configure the managed DNS service.
+- **Internet connectivity**: This provides mutually exclusive options for Internet connectivity:
+  - **Do not connect or connect using default route from Azure**: If not default route for quad-zero (i.e. 0.0.0.0/0) is advertised from an Azure vNet or Azure vWAN, then there will be no connectivity to Internet (as if Internet connectivity is disabled).
+  - **Connect using SNAT**: This is the most simple way to configure outbound Internet connectivity through a managed SNAT service. You may use it in a testing environment, or ,less commonly, if you have no requirements for Internet traffic inspection.
+  - **Connecting using Public IP down to NSX Edge**: With this option you can leverage provisioning a IP address block of Azure Public IP addresses assigned to NSX tier-1 gateway, where you can configure SNAT and DNAT for outbound and inbound Internet connectivity.
+
+### Operations
+
+That is where you can **verify if Azure Arc** is configured properly. You can also find **Run Commands**. Run Command is feature that you may see in other Azure resources such as VMs, it lets you perform operations that would normally require elevated privileges through a collection of PowerShell modules and cmdlets. These privileged operations are not part of what the default CloudAdmin role can perform. For example, you can configure Storage Policies, integration with External Identity Providers (LDAPS), Restart HCX Manager, Provision DR solutions like JetStream, Zerto, and other operations. Last part here is **Maintenance** section, which allows the you to configure service health alerts, find out any future upgrades or changes to the VMware components, and potentially reschedule a scheduled maintenance operation to avoid any interruptions.
 
 ### Monitoring and Diagnostics  
-Similar to other Azure resources, AVS offers:
-- **Metrics**: Track CPU, memory, and datastore utilization.
-- **Alerts**: Configure rules based on resource metrics.
-- **Diagnostic Settings**: Export syslog and metrics to destinations like Azure Log Analytics.
 
----
+Similar to other Azure resources, you will notice the following sections:
 
-### Final Thoughts  
-AVS combines the familiarity of VMware with the scalability of Azure, offering a seamless private cloud experience. While it integrates tightly with Azure’s ecosystem, its unique requirements, such as quotas, network planning, and specialized management options, make it crucial for administrators to understand the AVS lifecycle. With tools and settings tailored for enterprise needs, AVS empowers businesses to innovate securely and efficiently in the cloud.
+- **Metrics**: Track and monitor things like CPU, memory, datastore, etc. utilization.
+- **Alerts**: Configure Alert rules and Action groups based on certain Metrics, Logs, Resource Health, etc.
+- **Diagnostic Settings**: Export syslog and metrics to destinations like Azure Log Analytics, Azure Storage, etc.
+- **Advisor recommendations**: There is more to be added here, but currently the most popular recommendation you may get here is “New HCX version is available for upgrade”, as it is a best practice to keep HCX up to date (at both sites). Keep in mind that it is your responsibility to manage HCX upgrades.
+
+## Help
+
+Last but not least, under Help, you will find **Resource health** where you can monitor the health of the whole service. And most importantly, you will find **Support + Troubleshooting** this is the section where you can open support ticket if you are running into any issues with the service. Since AVS is a Microsoft first-party service, you contact Microsoft for any support related to AVS components.
+
+## Final Thoughts
+
+AVS combines the familiarity of VMware with the scalability of Azure, offering a seamless private cloud experience. While it integrates tightly with Azure’s ecosystem, its unique requirements, such as quotas, network planning, and specialized management options, make it crucial for administrators to understand the AVS lifecycle. Beside the Azure Portal experience, there are other ways to manage AVS including:
+
+- [Azure CLI with `vmware` extension](https://learn.microsoft.com/cli/azure/vmware?view=azure-cli-latest)
+- [PowerShell with `Az.VMware` module](https://learn.microsoft.com/powershell/module/az.vmware)
+- [REST API for AVS](https://learn.microsoft.com/rest/api/avs/)
+
+ Next blog post will present the VMware experience of Azure VMware Solution. Stay tuned!
+ 
