@@ -249,4 +249,6 @@ AVS combines the familiarity of VMware with the scalability of Azure, offering a
 - [PowerShell with `Az.VMware` module](https://learn.microsoft.com/powershell/module/az.vmware)
 - [REST API for AVS](https://learn.microsoft.com/rest/api/avs/)
 
- Next blog post will present the VMware experience of Azure VMware Solution. Stay tuned!
+Next blog post will present the VMware experience of Azure VMware Solution. Stay tuned!
+
+Join [AVSPros](https://aka.ms/AVSPros) if you're not a member yet!
