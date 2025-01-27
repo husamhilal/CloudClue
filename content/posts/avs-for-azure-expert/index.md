@@ -1,7 +1,7 @@
 +++
 author = "Husam Hilal"
 title = "Azure VMware Solution for Azure Experts"
-date = "2025-01-21"
+date = "2025-01-26"
 description = "Explore Azure VMware Solution experience in Azure as an Azure Subject Matter Expert"
 image = "images/avs-for-azure-expert.png"
 aliases = [ "avs-azure-experience" ]

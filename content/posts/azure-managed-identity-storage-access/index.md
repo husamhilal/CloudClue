@@ -1,22 +1,16 @@
 +++
 author = "Husam Hilal"
 title = "Using Azure Managed Identity to access Azure Storage Account using PowerShell"
-date = "2025-01-02"
+date = "2025-01-03"
 description = "Learn how to access Azure Storage Account authenticating with Azure Managed Identity using PowerShell"
 image = "images/managed-identity-azure-storage.png"
-aliases = ["azure-managed-identity-example"]
-toc = false
-tags = [
-    "Storage Account",
-    "PowerShell",
-    "Managed Identity",
-    "Security",
-    "Azure Champ",
-    "Entra ID",
-    "Azure"
-]
+aliases = [ "azure-managed-identity-example" ]
+tags = [ "Storage Account", "PowerShell", "Managed Identity", "Security", "Azure Champ", "Entra ID", "Azure" ]
+keywords = [ "Azure security", "Passwordless", "Authentication", "Storage", "Secure access", "Azure Managed Identity", "Storage Account", "PowerShell", "Automation" ]
 series = ["Azure Core"]
 categories = ["Microsoft Azure"]
+toc = false
+draft = false
 +++
 
 ## Background
