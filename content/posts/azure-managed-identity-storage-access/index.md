@@ -81,6 +81,6 @@ Set-AzStorageBlobContent -File $uploadFilePath -Container $container.Name -Blob 
 
 As you noticed from the script-snippet above that there was no credentials/passwords/passphrases/secrets/keys/certificates exposed. That's a big advantage of using managed identities, especially when storing scripts in code repository 😉 Think about it as the **password-less infrastructure experience**. That's the beauty of Azure Managed Identities!
 
-As a side note, the same approach is achievable through Azure CLI. You'll just need to use the equivalent commands.
+> **Note** The same approach is achievable through Azure CLI. You'll just need to use the equivalent commands.
 
-I hope this was a good introduction for you to start leveraging managed identities in your scripts.
+I hope this was a help introduction to start leveraging managed identities in your scripts.
