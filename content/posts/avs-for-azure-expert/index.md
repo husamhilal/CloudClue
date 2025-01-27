@@ -17,7 +17,7 @@ draft = false
 
 Azure VMware Solution (AVS) bridges the gap between traditional VMware environments and modern Azure services, allowing customers to easily migrate, run, manage, and secure VMware workloads natively on Azure.
 
-In the context of AVS, exploring Azure and VMware vSphere is like examining a coin—each side complements the other. In this blog, I’ll focus on the Azure side of the coin, diving into how AVS integrates with Azure. In a future blog, I’ll flip the coin to reveal the VMware side.
+In the context of AVS, exploring Azure and VMware vSphere is like examining a coin—each side complements the other. **In this blog, I’ll focus on the Azure side of the coin, diving into how AVS integrates with Azure experience**. In a future blog, I’ll flip the coin to reveal the VMware side.
 
 {{< notice info >}}
 I am going to call Azure VMware Solution – "**AVS**" – for simplicity. However, it is not an official acronym
@@ -25,7 +25,7 @@ I am going to call Azure VMware Solution – "**AVS**" – for simplicity. Howev
 
 ## AVS as an Azure Resource
 
-AVS is represented as a resource provider within Azure **Microsoft.AVS**. You must [register this provider](https://learn.microsoft.com/azure/azure-vmware/deploy-azure-vmware-solution?tabs=azure-portal#register-the-microsoftavs-resource-provider) in your Azure subscription before provisioning AVS. This step parallels other Azure services, ensuring subscription readiness for specific workloads. If not registered, you cannot deploy AVS private cloud resources; users may see an error at deployment even if they have quota allocation. When an instance is deployed it is represented as `microsoft.avs/privateclouds`.
+AVS is represented as a **resource provider** within Azure **Microsoft.AVS**. You must [register this provider](https://learn.microsoft.com/azure/azure-vmware/deploy-azure-vmware-solution?tabs=azure-portal#register-the-microsoftavs-resource-provider) in your Azure subscription before provisioning AVS. This step parallels other Azure services, ensuring subscription readiness for specific services. If not registered, you cannot deploy AVS private cloud resources; users may see an error at deployment even if they have quota allocation. When an instance is deployed it is represented as `microsoft.avs/privateclouds`.
 
 ![AVS Resource Provider](images/avs-resource-provider.png "AVS Resource Provider")
 
@@ -37,17 +37,17 @@ When you set up an Azure subscription, you begin with **zero quota**, unlike oth
 
 ## Exploring the Azure Portal for AVS
 
-The [Azure Portal](https://learn.microsoft.com/azure/azure-portal/azure-portal-overview) provides an intuitive experience for managing AVS. Here’s a breakdown of key tabs in the service menu:
+The [Azure Portal](https://learn.microsoft.com/azure/azure-portal/azure-portal-overview) provides an intuitive experience for managing AVS. Here’s a breakdown of key sections in the service (resource) menu :
 
 ### Overview
 
 Under Overview you will find few key things you need to be aware of:
 
-![AVS blade from Azure Portal](images/avs-blade-azure-portal.png "AVS blade from Azure Portal")
+![AVS blade from Azure Portal](images/avs-blade-azure-portal.png "AVS blade in Azure Portal")
 
 #### JSON View
 
-Displays AVS resource properties in plain JSON format. You can select the latest API version and review key resource attributes. Most of these properties are available when browsing the service menu views in the AVS blade in Azure Portal. I find it easier to use the JSON view to get certain information (e.g. find the IP address of vCenter).
+Displays AVS resource properties in plain JSON format. You can select the latest API version and review key resource attributes. Most of these properties are available when browsing the service menu views in the AVS blade in Azure Portal. You may use the the JSON view to get certain information (e.g. find the IP address of vCenter).
 
 ![JSON View](images/avs-json-view.png "JSON View")
 
@@ -58,7 +58,7 @@ Essentials section provides some high-level information about the AVS private cl
 {{< notice info >}}
 **Network Address Blocks**:
 AVS private cloud **management** components requires a minimum of a /22 network address block. Additionally, a /24 address block may be needed for **Multipath Input/Output** (MPIO) when adding external storage services that use iSCSI technology. A /23 address block might also be required for deploying additional clusters of the **AV64** SKU, an Azure fleet SKU.
-The **key consideration** when selecting these network address blocks is ensuring they do not overlap with other networks, such as on-premises networks, Azure Virtual Networks, or Azure Virtual WAN hubs.
+The **key consideration** when selecting these network address blocks is ensuring they do not overlap with other networks, such as on-premises networks, Azure Virtual Networks (vNet), or Azure Virtual WAN (vWAN) hubs which may be connected to your AVS private cloud resource.
 {{< /notice >}}
 
 #### Get started and Tutorials
@@ -95,7 +95,7 @@ Similar to other Azure services, the **Lock** feature can be found under **Setti
 - **Read-only Lock**: Prevents unintended changes to resource properties to avoid unplanned interruptions.
 
 {{< notice info >}}
- Enabling locks is a best practice for production environments. Keep in mind that only the **Owner** and **User Access Administrator** built-in roles can create or delete management locks.
+ Enabling locks is a best practice for production environments. Keep in mind that only the **Owner** or **User Access Administrator** built-in roles can create or delete management locks.
 {{< /notice >}}
 
 ## Unique Features of AVS in Azure Portal
@@ -110,34 +110,34 @@ This section allows you to manage AVS private cloud specific configurations.
 
 AVS offers multiple connectivity options to integrate with the Azure ecosystem and on-premises environments to enable hybrid cloud or full data center evacuation:  
 
-- **Azure vNet Connect**:  his helps connecting the AVS private cloud to an Azure Virtual Network (vNet) through an internal ExpressRoute connection. As a **cost advantage** there are no charges for the internal ExpressRoute connectivity. This is just a shortcut method, see the next bullet for configuring the same connectivity manually.  
+- **Azure vNet Connect**:  This helps connecting the AVS private cloud to an Azure Virtual Network (vNet) through an internal ExpressRoute connection. This is just a shortcut method, see the next bullet for configuring the same connectivity manually. As a **cost advantage** there are no charges for the internal ExpressRoute connectivity.
 
-- **ExpressRoute Authorization**: Provides the ability to request an Authorization Key, required to establish an ExpressRoute connection with the AVS-provided ExpressRoute circuit. This section also allows you to retrieve the **ExpressRoute Circuit ID** and **Private Peering ID** for configuration.  
+- **ExpressRoute Authorization**: Provides the ability to request an **Authorization Key**, required to establish an ExpressRoute connection with the AVS-provided ExpressRoute circuit. This section also allows you to retrieve the **ExpressRoute Circuit ID** and **Private Peering ID** for configurating connectivity to Azure vNet or vWAN hub.  
 
   ![ExpressRoute Authorization Keys](images/avs-er-authkey.png "ExpressRoute Authorization Keys")
 
-- **ExpressRoute Global Reach**: This option is ideal for customers with existing ExpressRoute connectivity to Azure and do not have complicated network inspection requirements. Where it enables connectivity between the private peering of two ExpressRoute circuits, such as:  
+- **ExpressRoute Global Reach**: This option is ideal for customers with existing ExpressRoute connectivity to Azure and do not have complicated network inspection requirements. Where it enables connectivity between the private peerings of two ExpressRoute circuits, such as:  
   - On-premises to Azure.  
   - AVS private cloud.
 
-This can also be helpful for connecting multiple AVS private cloud instances located in different regions. But be mindful that Global Reach is not available in all Azure regions.
+  This can also be helpful for connecting multiple AVS private cloud instances located in different regions. But be mindful that Global Reach is not available in all Azure regions.
 
 #### Clusters
 
 This sections enables you to manage AVS clusters:
 
-- **Add** or **remove** hosts in existing clusters (e.g. add AV64 clusters for capacity expansion.)
-- Deploy new clusters (minimum of three hosts in each).
-- Delete existing clusters if no longer used.
+- **Add** or **remove** hosts (nodes) in existing clusters (e.g. add AV64 clusters for capacity expansion.)
+- **Deploy new** clusters (minimum of three hosts in each).
+- **Delete** existing clusters if no longer used.
 
 Here are couple considerations to keep in mind:
 
-- Currently, AVS private cloud needs to have the first (aka seed or initial) cluster of AV36 or AV36P, and expand capacity by adding AV64 clusters (recommended). For, AV64 an additional management address block need to be configured under **Extended address block** accessible from the Clusters section.
-- To add additional hosts, make sure you have enough quota. You may need to request additional quota when you expect to add capacity. Hosts will be added to an existing cluster in parallel. The operation takes about 30 minutes.
+- Currently, AVS private cloud needs to have the first (aka seed or initial) cluster of AV36 or AV36P, and expand capacity by adding AV64 clusters (recommended). Leveraging AV64 is the only time you can mix SKUs in the same AVS private cloud deployment. For AV64, an additional management address block need to be configured under **Extended address block** accessible from the Clusters section.
+- To add additional hosts, make sure you have enough quota. You may need to request additional quota when you expect to add capacity. Hosts will be added to an existing cluster in parallel, it takes about 30 minutes.
 
-![Adding 2 nodes to existing cluster](images/avs-edit-cluster.png "Adding 2 nodes to existing cluster")
+  ![Adding 2 nodes to existing cluster](images/avs-edit-cluster.png "Adding 2 nodes to existing cluster")
 
-![Adding a new cluster of 3 nodes](images/avs-add-cluster.png "Adding a new cluster of 3 nodes")
+  ![Adding a new cluster of 3 nodes](images/avs-add-cluster.png "Adding a new cluster of 3 nodes")
 
 #### Encryption
 
@@ -145,11 +145,9 @@ That is where you can configure AVS private cloud to use a **customer managed ke
 
 #### VMware Credentials
 
-Access **CloudAdmin credentials** for vSphere and NSX Manager. Passwords can be rotated here, and URI certificates verified.
+That is were you can access the **CloudAdmin credentials** for vSphere client (**vCenter** Server) and **NSX** Manager. You can also rotate the passwords for those credentials. It worth mentioning that rotation can be automated. For example, you can use Azure Logic App to achieve that.
 
-That is were you can access the CloudAdmin credentials for vSphere client (vCenter Server) and NSX Manager. You can also rotate the passwords for those credentials. It worth mentioning that rotation can be automated. For example, you can use Azure Logic App for that
-
-From this section you can also you can grab the Web Client URI for both of vCenter Server and NSX Manager, and since these URI are TLS (SSL) encrypted, you can check the Certificate thumbprint if needed.
+From this section you can also you can grab the **Web Client URI** for both of vCenter Server and NSX Manager, and since these URI are TLS (SSL) encrypted, you can check the Certificate thumbprint if needed.
 
 ![AVS VMware Credentials](images/avs-vmware-credentials.png "AVS VMware Credentials")
 
@@ -189,11 +187,11 @@ That is were you can start configuring three main solutions for AVS including:
   ![Add-ons overview](images/avs-add-ons.png "Add-ons overview")
 
 1. **VMware HCX** which is the primary solution used for migrating workloads to AVS. The license for HCX is include in AVS. [Access a **click-through demo** to experiment migrating VMs using VMware HCX to AVS](https://regale.cloud/Microsoft/play/3210/hcx-migration)
-  ![Deploy HCX for an AVS Private Cloud](images/avs-deploy-hcx.png "Deploy VMware HCX for an AVS Private Cloud")v
+  ![Deploy HCX for an AVS Private Cloud](images/avs-deploy-hcx.png "Deploy VMware HCX for an AVS Private Cloud")
 
-2. **VMware SRM** (which is being re-branded to **VMware Live Site Recovery**) which is an easy to enable disaster recovery solution for AVS. But you will need to purchase license from Broadcom. [Access a **click-through demo** to experiment protecting VMs with VMware SRM and AVS](https://regale.cloud/Microsoft/play/3245/vmware-site-recovery-manager-srm)
+1. **VMware SRM** (which is being re-branded to **VMware Live Site Recovery**) which is an easy to enable disaster recovery solution for AVS. But you will need to purchase license from Broadcom. [Access a **click-through demo** to experiment protecting VMs with VMware SRM and AVS](https://regale.cloud/Microsoft/play/3245/vmware-site-recovery-manager-srm)
 
-3. **Azure Arc** which is an Azure native service, when enabled for AVS it helps managing and operating VMs on vSphere making the experience very similar to native Azure VMs. It enables Create, Read, Update and Delete (CRUD) operations via the Azure APIs (including Azure Portal).
+2. **Azure Arc** which is an Azure native service, when enabled for AVS it helps managing and operating VMs on vSphere making the experience very similar to native Azure VMs. It enables Create, Read, Update and Delete (CRUD) operations via the Azure APIs (including Azure Portal).
 
 
 ### vCenter Server Inventory  
