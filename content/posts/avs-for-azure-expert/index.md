@@ -193,7 +193,6 @@ That is were you can start configuring three main solutions for AVS including:
 
 2. **Azure Arc** which is an Azure native service, when enabled for AVS it helps managing and operating VMs on vSphere making the experience very similar to native Azure VMs. It enables Create, Read, Update and Delete (CRUD) operations via the Azure APIs (including Azure Portal).
 
-
 ### vCenter Server Inventory  
 
 This is only enabled if the AVS private cloud is **Arc-enabled**. Through this section, you can view existing VM deployed on AVS vSphere, you can also create or delete VMs. You can also **Arc-enable these VMs**, and take all advantages of Arc-enabled Servers including integration with Azure Monitor, Azure Update Manager, Windows Admin Center, Run Command, Defender for Cloud, etc. Also, you can view and **Azure-enable** *Resource Pools/clusters/hosts, Networks, Templates, and Datastores*. 
@@ -237,7 +236,7 @@ Similar to other Azure resources, you will notice the following sections:
 - **Advisor recommendations**: There is more to be added here, but currently the most popular recommendation you may get here is “New HCX version is available for upgrade”, as it is a best practice to keep HCX up to date (at both sites). Keep in mind that it is your responsibility to manage HCX upgrades.
   ![Example for Advisor Recommendation to upgrade HCX version](images/avs-advisor-hcx.png "Example for Advisor Recommendation to upgrade HCX version")
 
-## Help
+### Help
 
 Last but not least, under Help, you will find **Resource health** where you can monitor the health of the whole service. And most importantly, you will find **Support + Troubleshooting** this is the section where you can open support ticket if you are running into any issues with the service. Since AVS is a Microsoft first-party service, you contact Microsoft for any support related to AVS components.
 
